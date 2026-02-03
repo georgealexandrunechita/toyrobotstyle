@@ -1,16 +1,53 @@
-# React + Vite
+# Toy Robot Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Un juego interactivo desarrollado con React y Tailwind CSS donde controlas un robot en un tablero 5x5.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Tablero 5x5 interactivo** - Visualización moderna del tablero de juego
+- **Control de Robot** - Coloca, mueve y gira el robot
+- **Sistema de Paredes** - Coloca obstáculos en el tablero
+- **Reportes** - Obtén la posición y dirección actual del robot
+- **Interfaz Oscura Moderna** - Diseño con gradientes púrpura/rosa
 
-## React Compiler
+## Tecnologías
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- **React 19** - Framework de UI
+- **Tailwind CSS v4** - Estilos y diseño responsive
+- **Vite** - Build tool y dev server
+- **React Router** - Navegación entre vistas
 
-## Expanding the ESLint configuration
+## Instalación
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+```
+
+## Desarrollo
+
+```bash
+npm run dev
+```
+
+Abre [http://localhost:5174](http://localhost:5174) en tu navegador.
+
+## Comandos del Juego
+
+- **PLACE_ROBOT row,col,facing** - Coloca el robot en una posición (1-5) y dirección (NORTH/SOUTH/EAST/WEST)
+- **PLACE_WALL row,col** - Coloca una pared en la posición especificada
+- **MOVE** - Mueve el robot una casilla hacia donde está mirando
+- **LEFT** - Gira el robot 90° a la izquierda
+- **RIGHT** - Gira el robot 90° a la derecha
+- **REPORT** - Obtiene la posición y dirección actual del robot
+
+## Build
+
+```bash
+npm run build
+npm run preview
+```
+
+## Proyecto
+
+ALEX NECHITA
+
