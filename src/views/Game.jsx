@@ -82,10 +82,10 @@ export default function Game() {
             confirmButtonColor: "#3b82f6",
             cancelButtonColor: "#64748b",
             customClass: {
-                popup: "rounded-3xl shadow-2xl border border-slate-700/50 backdrop-blur-xl",
-                title: "text-2xl font-black bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent",
-                confirmButton: "rounded-xl px-8 py-3 font-bold shadow-lg hover:shadow-xl transition-all",
-                cancelButton: "rounded-xl px-8 py-3 font-bold shadow-lg hover:shadow-xl transition-all"
+                popup: "!w-[90vw] !max-w-[400px] sm:!max-w-md rounded-3xl shadow-2xl border border-slate-700/50 backdrop-blur-xl",
+                title: "text-xl sm:text-2xl font-black bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent",
+                confirmButton: "rounded-xl px-6 sm:px-8 py-2 sm:py-3 font-bold shadow-lg hover:shadow-xl transition-all text-sm sm:text-base",
+                cancelButton: "rounded-xl px-6 sm:px-8 py-2 sm:py-3 font-bold shadow-lg hover:shadow-xl transition-all text-sm sm:text-base"
             },
             preConfirm: () => {
                 return {
@@ -108,7 +108,7 @@ export default function Game() {
                     color: "#f1f5f9",
                     confirmButtonColor: "#10b981",
                     customClass: {
-                        popup: "rounded-3xl shadow-2xl border border-slate-700/50"
+                        popup: "!w-[90vw] !max-w-[400px] sm:!max-w-md rounded-3xl shadow-2xl border border-slate-700/50"
                     }
                 });
             } else {
@@ -120,7 +120,7 @@ export default function Game() {
                     color: "#f1f5f9",
                     confirmButtonColor: "#ef4444",
                     customClass: {
-                        popup: "rounded-3xl shadow-2xl border border-slate-700/50"
+                        popup: "!w-[90vw] !max-w-[400px] sm:!max-w-md rounded-3xl shadow-2xl border border-slate-700/50"
                     }
                 });
             }
@@ -155,10 +155,10 @@ export default function Game() {
             confirmButtonColor: "#64748b",
             cancelButtonColor: "#475569",
             customClass: {
-                popup: "rounded-3xl shadow-2xl border border-slate-700/50 backdrop-blur-xl",
-                title: "text-2xl font-black bg-gradient-to-r from-gray-400 to-slate-400 bg-clip-text text-transparent",
-                confirmButton: "rounded-xl px-8 py-3 font-bold shadow-lg hover:shadow-xl transition-all",
-                cancelButton: "rounded-xl px-8 py-3 font-bold shadow-lg hover:shadow-xl transition-all"
+                popup: "!w-[90vw] !max-w-[400px] sm:!max-w-md rounded-3xl shadow-2xl border border-slate-700/50 backdrop-blur-xl",
+                title: "text-xl sm:text-2xl font-black bg-gradient-to-r from-gray-400 to-slate-400 bg-clip-text text-transparent",
+                confirmButton: "rounded-xl px-6 sm:px-8 py-2 sm:py-3 font-bold shadow-lg hover:shadow-xl transition-all text-sm sm:text-base",
+                cancelButton: "rounded-xl px-6 sm:px-8 py-2 sm:py-3 font-bold shadow-lg hover:shadow-xl transition-all text-sm sm:text-base"
             },
             preConfirm: () => {
                 return {
@@ -180,7 +180,7 @@ export default function Game() {
                         color: "#f1f5f9",
                         confirmButtonColor: "#ef4444",
                         customClass: {
-                            popup: "rounded-3xl shadow-2xl border border-slate-700/50"
+                            popup: "!w-[90vw] !max-w-[400px] sm:!max-w-md rounded-3xl shadow-2xl border border-slate-700/50"
                         }
                     });
                     return;
@@ -194,7 +194,7 @@ export default function Game() {
                         color: "#f1f5f9",
                         confirmButtonColor: "#ef4444",
                         customClass: {
-                            popup: "rounded-3xl shadow-2xl border border-slate-700/50"
+                            popup: "!w-[90vw] !max-w-[400px] sm:!max-w-md rounded-3xl shadow-2xl border border-slate-700/50"
                         }
                     });
                     return;
@@ -208,7 +208,7 @@ export default function Game() {
                     color: "#f1f5f9",
                     confirmButtonColor: "#10b981",
                     customClass: {
-                        popup: "rounded-3xl shadow-2xl border border-slate-700/50"
+                        popup: "!w-[90vw] !max-w-[400px] sm:!max-w-md rounded-3xl shadow-2xl border border-slate-700/50"
                     }
                 });
             } else {
@@ -220,7 +220,7 @@ export default function Game() {
                     color: "#f1f5f9",
                     confirmButtonColor: "#ef4444",
                     customClass: {
-                        popup: "rounded-3xl shadow-2xl border border-slate-700/50"
+                        popup: "!w-[90vw] !max-w-[400px] sm:!max-w-md rounded-3xl shadow-2xl border border-slate-700/50"
                     }
                 });
             }
@@ -237,7 +237,7 @@ export default function Game() {
                 color: "#f1f5f9",
                 confirmButtonColor: "#ef4444",
                 customClass: {
-                    popup: "rounded-3xl shadow-2xl border border-slate-700/50"
+                    popup: "!w-[90vw] !max-w-[400px] sm:!max-w-md rounded-3xl shadow-2xl border border-slate-700/50"
                 }
             });
             return;
@@ -262,7 +262,7 @@ export default function Game() {
                 color: "#f1f5f9",
                 confirmButtonColor: "#f59e0b",
                 customClass: {
-                    popup: "rounded-3xl shadow-2xl border border-slate-700/50"
+                    popup: "!w-[90vw] !max-w-[400px] sm:!max-w-md rounded-3xl shadow-2xl border border-slate-700/50"
                 }
             });
         } else {
@@ -276,7 +276,7 @@ export default function Game() {
                 background: "linear-gradient(135deg, #1e293b 0%, #0f172a 100%)",
                 color: "#f1f5f9",
                 customClass: {
-                    popup: "rounded-3xl shadow-2xl border border-slate-700/50"
+                    popup: "!w-[90vw] !max-w-[400px] sm:!max-w-md rounded-3xl shadow-2xl border border-slate-700/50"
                 }
             });
         }
@@ -292,7 +292,7 @@ export default function Game() {
                 color: "#f1f5f9",
                 confirmButtonColor: "#ef4444",
                 customClass: {
-                    popup: "rounded-3xl shadow-2xl border border-slate-700/50"
+                    popup: "!w-[90vw] !max-w-[400px] sm:!max-w-md rounded-3xl shadow-2xl border border-slate-700/50"
                 }
             });
             return;
@@ -310,7 +310,7 @@ export default function Game() {
             background: "linear-gradient(135deg, #1e293b 0%, #0f172a 100%)",
             color: "#f1f5f9",
             customClass: {
-                popup: "rounded-3xl shadow-2xl border border-slate-700/50"
+                popup: "!w-[90vw] !max-w-[400px] sm:!max-w-md rounded-3xl shadow-2xl border border-slate-700/50"
             }
         });
     };
@@ -327,7 +327,7 @@ export default function Game() {
                 color: "#f1f5f9",
                 confirmButtonColor: "#3b82f6",
                 customClass: {
-                    popup: "rounded-3xl shadow-2xl border border-slate-700/50"
+                    popup: "!w-[90vw] !max-w-[400px] sm:!max-w-md rounded-3xl shadow-2xl border border-slate-700/50"
                 }
             });
         } else {
@@ -339,7 +339,7 @@ export default function Game() {
                 color: "#f1f5f9",
                 confirmButtonColor: "#ef4444",
                 customClass: {
-                    popup: "rounded-3xl shadow-2xl border border-slate-700/50"
+                    popup: "!w-[90vw] !max-w-[400px] sm:!max-w-md rounded-3xl shadow-2xl border border-slate-700/50"
                 }
             });
         }
@@ -358,9 +358,9 @@ export default function Game() {
             background: "linear-gradient(135deg, #1e293b 0%, #0f172a 100%)",
             color: "#f1f5f9",
             customClass: {
-                popup: "rounded-3xl shadow-2xl border border-slate-700/50",
-                confirmButton: "rounded-xl px-8 py-3 font-bold shadow-lg hover:shadow-xl transition-all",
-                cancelButton: "rounded-xl px-8 py-3 font-bold shadow-lg hover:shadow-xl transition-all"
+                popup: "!w-[90vw] !max-w-[400px] sm:!max-w-md rounded-3xl shadow-2xl border border-slate-700/50",
+                confirmButton: "rounded-xl px-6 sm:px-8 py-2 sm:py-3 font-bold shadow-lg hover:shadow-xl transition-all text-sm sm:text-base",
+                cancelButton: "rounded-xl px-6 sm:px-8 py-2 sm:py-3 font-bold shadow-lg hover:shadow-xl transition-all text-sm sm:text-base"
             }
         }).then((result) => {
             if (result.isConfirmed) {
@@ -375,7 +375,7 @@ export default function Game() {
                     background: "linear-gradient(135deg, #1e293b 0%, #0f172a 100%)",
                     color: "#f1f5f9",
                     customClass: {
-                        popup: "rounded-3xl shadow-2xl border border-slate-700/50"
+                        popup: "!w-[90vw] !max-w-[400px] sm:!max-w-md rounded-3xl shadow-2xl border border-slate-700/50"
                     }
                 });
             }
