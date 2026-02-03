@@ -49,7 +49,7 @@ export default function Game() {
             title: "Colocar Robot",
             html: `
         <div class="space-y-4">
-          <div class="text-left">
+            <div class="text-left">
             <label class="block text-sm font-semibold text-slate-200 mb-2">Fila (1-5)</label>
             <input id="row" type="number" min="1" max="5" 
               class="w-full p-3 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" 
@@ -65,10 +65,10 @@ export default function Game() {
             <label class="block text-sm font-semibold text-slate-200 mb-2">Dirección</label>
             <select id="facing" 
               class="w-full p-3 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
-              <option value="NORTH">NORTH ⬆️</option>
-              <option value="EAST">EAST ➡️</option>
-              <option value="SOUTH">SOUTH ⬇️</option>
-              <option value="WEST">WEST ⬅️</option>
+              <option value="NORTH">NORTH</option>
+              <option value="EAST">EAST</option>
+              <option value="SOUTH">SOUTH</option>
+              <option value="WEST">WEST</option>
             </select>
           </div>
         </div>
@@ -383,7 +383,7 @@ export default function Game() {
     };
 
     return (
-        <div className="min-h-screen relative flex flex-col items-center justify-center px-2 sm:px-4 py-4 overflow-hidden">
+        <div className="min-h-screen w-full relative flex flex-col items-center justify-start px-2 sm:px-4 py-8 sm:py-12 overflow-auto">
             <video
                 autoPlay
                 muted
@@ -397,8 +397,8 @@ export default function Game() {
 
             <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/50 to-slate-900/80" />
 
-            <div className="w-full max-w-7xl relative z-10 mx-auto space-y-4">
-                <div className="flex items-center justify-between flex-wrap gap-3">
+            <div className="w-full max-w-4xl sm:max-w-6xl lg:max-w-7xl mx-auto space-y-6 px-2 relative z-10">
+                <div className="flex items-center justify-between flex-wrap gap-4 w-full">
                     <Link
                         to="/"
                         className="inline-flex items-center gap-2 text-slate-300 hover:text-white font-semibold transition-all duration-300 hover:translate-x-1 group text-sm"
@@ -446,26 +446,28 @@ export default function Game() {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 xl:grid-cols-12 gap-4">
-                    <div className="xl:col-span-7">
-                        <div className="backdrop-blur-xl bg-white/5 rounded-2xl p-1 shadow-2xl border border-white/10">
-                            <div className="bg-white/5 backdrop-blur-xl rounded-xl p-4 sm:p-6 flex items-center justify-center min-h-[400px] lg:min-h-[550px] border border-white/10">
-                                <Board robot={robot} walls={walls} />
+                <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-12 gap-6 w-full">
+                    <div className="lg:col-span-2 xl:col-span-7 order-1">
+                        <div className="w-full aspect-video max-h-[60vh] sm:max-h-[70vh] lg:max-h-[80vh]">
+                            <div className="w-full h-full backdrop-blur-xl bg-white/5 rounded-2xl p-2 border border-white/10 shadow-2xl">
+                                <div className="w-full h-full bg-white/5 backdrop-blur-xl rounded-xl p-4 flex items-center justify-center border border-white/10">
+                                    <Board robot={robot} walls={walls} />
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div className="xl:col-span-5 space-y-4">
+                    <div className="lg:col-span-2 xl:col-span-5 order-3 lg:order-2 space-y-4">
                         <div className="backdrop-blur-xl bg-white/5 rounded-2xl p-1 shadow-2xl border border-white/10">
                             <div className="bg-white/5 backdrop-blur-xl rounded-xl p-4 sm:p-6 border border-white/10">
-                                <h2 className="text-xl sm:text-2xl font-black bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent mb-4 text-center tracking-tight">
+                                <h2 className="text-xl sm:text-2xl font-black bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent mb-6 text-center tracking-tight">
                                     Controles
                                 </h2>
 
-                                <div className="grid grid-cols-2 gap-2 sm:gap-3">
+                                <div className="grid grid-cols-2 gap-3">
                                     <button
                                         onClick={placeRobot}
-                                        className="group relative overflow-hidden rounded-xl p-3 sm:p-4 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 font-bold text-xs sm:text-sm text-slate-200 hover:text-white active:scale-95"
+                                        className="group relative overflow-hidden rounded-xl p-3 sm:p-4 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 font-bold text-sm text-slate-200 hover:text-white"
                                     >
                                         <span className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                                         <span className="relative">Colocar Robot</span>
@@ -473,7 +475,7 @@ export default function Game() {
 
                                     <button
                                         onClick={placeWall}
-                                        className="group relative overflow-hidden rounded-xl p-3 sm:p-4 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 font-bold text-xs sm:text-sm text-slate-200 hover:text-white active:scale-95"
+                                        className="group relative overflow-hidden rounded-xl p-3 sm:p-4 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 font-bold text-sm text-slate-200 hover:text-white"
                                     >
                                         <span className="absolute inset-0 bg-gradient-to-r from-gray-400/20 to-slate-400/20 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                                         <span className="relative">Colocar Pared</span>
@@ -481,64 +483,62 @@ export default function Game() {
 
                                     <button
                                         onClick={moveRobot}
-                                        className="group relative overflow-hidden rounded-xl p-3 sm:p-4 bg-gradient-to-r from-emerald-500 to-teal-600 border border-white/20 hover:from-emerald-600 hover:to-teal-700 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 font-bold text-xs sm:text-sm text-white active:scale-95"
+                                        className="col-span-2 rounded-xl p-4 bg-gradient-to-r from-emerald-500 to-teal-600 border border-emerald-400/30 hover:from-emerald-600 hover:to-teal-700 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 font-bold text-base text-white"
                                     >
-                                        <span className="absolute inset-0 bg-white/10 -translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-                                        <span className="relative z-10">Mover</span>
+                                        Mover
                                     </button>
 
                                     <button
                                         onClick={() => rotateRobot("LEFT")}
-                                        className="rounded-xl p-3 sm:p-4 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 font-bold text-xs sm:text-sm text-slate-200 hover:text-white active:scale-95"
+                                        className="rounded-xl p-3 sm:p-4 bg-gradient-to-l from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all font-bold text-sm text-white"
                                     >
-                                        ← Girar
+                                        Girar Izquierda
                                     </button>
 
                                     <button
                                         onClick={() => rotateRobot("RIGHT")}
-                                        className="rounded-xl p-3 sm:p-4 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 font-bold text-xs sm:text-sm text-slate-200 hover:text-white active:scale-95"
+                                        className="rounded-xl p-3 sm:p-4 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all font-bold text-sm text-white"
                                     >
-                                        Girar →
+                                        Girar Derecha
                                     </button>
 
                                     <button
                                         onClick={generateReport}
-                                        className="rounded-xl p-3 sm:p-4 bg-gradient-to-r from-blue-500 to-indigo-600 border border-white/20 hover:from-blue-600 hover:to-indigo-700 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 font-bold text-xs sm:text-sm text-white active:scale-95"
+                                        className="col-span-2 rounded-xl p-4 bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all font-bold text-lg text-white"
                                     >
                                         Ver Reporte
                                     </button>
 
                                     <button
                                         onClick={clearBoard}
-                                        className="rounded-xl p-3 sm:p-4 bg-gradient-to-r from-red-500 to-rose-600 border border-white/20 hover:from-red-600 hover:to-rose-700 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 font-bold text-xs sm:text-sm text-white active:scale-95 col-span-2"
+                                        className="col-span-2 rounded-xl p-4 bg-gradient-to-r from-red-500 to-rose-600 hover:from-red-600 hover:to-rose-700 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all font-bold text-lg text-white"
                                     >
                                         Limpiar Todo
                                     </button>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-4">
-                            <div className="backdrop-blur-xl bg-white/5 rounded-xl p-1 shadow-lg border border-white/10">
-                                <div className="bg-white/5 backdrop-blur-xl rounded-lg p-4 border border-white/10">
-                                    <RobotReport report={report} />
-                                </div>
+                    <div className="lg:col-span-2 xl:col-span-12 order-2 grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+                        <div className="backdrop-blur-xl bg-white/5 rounded-xl p-1 shadow-lg border border-white/10">
+                            <div className="bg-white/5 backdrop-blur-xl rounded-lg p-4 border border-white/10">
+                                <RobotReport report={report} />
                             </div>
-
-                            <div className="bg-white/5 backdrop-blur-xl rounded-xl p-4 border border-white/10">
-                                <h3 className="text-base font-bold text-white mb-3">Estado</h3>
-                                <div className="space-y-2 text-sm">
-                                    <p className="flex justify-between">
-                                        <span className="text-slate-400">Paredes:</span>
-                                        <span className="font-mono text-blue-400 font-bold">{walls.length}</span>
-                                    </p>
-                                    <p className="flex justify-between">
-                                        <span className="text-slate-400">Robot:</span>
-                                        <span className="font-mono text-emerald-400 font-bold text-xs sm:text-sm">
-                                            {robot ? `${robot.row},${robot.col},${robot.facing}` : 'Sin colocar'}
-                                        </span>
-                                    </p>
-                                </div>
+                        </div>
+                        <div className="bg-white/5 backdrop-blur-xl rounded-xl p-4 border border-white/10">
+                            <h3 className="text-lg font-bold text-white mb-4">Estado</h3>
+                            <div className="space-y-3 text-sm">
+                                <p className="flex justify-between p-3 bg-slate-800/30 rounded-lg">
+                                    <span className="text-slate-400">Paredes:</span>
+                                    <span className="font-mono text-emerald-400 font-bold">{walls.length}</span>
+                                </p>
+                                <p className="flex justify-between p-3 bg-slate-800/30 rounded-lg">
+                                    <span className="text-slate-400">Robot:</span>
+                                    <span className="font-mono text-blue-400 font-bold px-3 py-1 bg-blue-500/20 rounded-full">
+                                        {robot ? `${robot.row},${robot.col},${robot.facing}` : 'Sin colocar'}
+                                    </span>
+                                </p>
                             </div>
                         </div>
                     </div>
