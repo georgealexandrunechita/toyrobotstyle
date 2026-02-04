@@ -52,27 +52,26 @@ export default function Game() {
             <div class="text-left">
             <label class="block text-sm font-semibold text-slate-200 mb-2">Fila (1-5)</label>
             <input id="row" type="number" min="1" max="5" 
-              class="w-full p-3 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" 
-              value="1">
-          </div>
-          <div class="text-left">
-            <label class="block text-sm font-semibold text-slate-200 mb-2">Columna (1-5)</label>
-            <input id="col" type="number" min="1" max="5" 
-              class="w-full p-3 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" 
-              value="1">
-          </div>
-          <div class="text-left">
-            <label class="block text-sm font-semibold text-slate-200 mb-2">Dirección</label>
-            <select id="facing" 
-              class="w-full p-3 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
-              <option value="NORTH">NORTH</option>
-              <option value="EAST">EAST</option>
-              <option value="SOUTH">SOUTH</option>
-              <option value="WEST">WEST</option>
-            </select>
-          </div>
+                class="w-full p-3 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" 
+                value="1">
         </div>
-      `,
+        <div class="text-left">
+            <label class="block text-sm font-semibold text-slate-200 mb-2">Columna (1-5)</label>
+                <input id="col" type="number" min="1" max="5" 
+                    class="w-full p-3 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" 
+                    value="1">
+            </div>
+            <div class="text-left">
+                <label class="block text-sm font-semibold text-slate-200 mb-2">Dirección</label>
+                    <select id="facing" 
+                    class="w-full p-3 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                        <option value="NORTH">NORTH</option>
+                        <option value="EAST">EAST</option>
+                        <option value="SOUTH">SOUTH</option>
+                        <option value="WEST">WEST</option>
+                </select>
+            </div>
+        </div>`,
             background: "linear-gradient(135deg, #1e293b 0%, #0f172a 100%)",
             color: "#f1f5f9",
             focusConfirm: false,
@@ -132,20 +131,19 @@ export default function Game() {
             title: "Colocar Pared",
             html: `
         <div class="space-y-4">
-          <div class="text-left">
-            <label class="block text-sm font-semibold text-slate-200 mb-2">Fila (1-5)</label>
-            <input id="wrow" type="number" min="1" max="5" 
-              class="w-full p-3 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" 
-              value="1">
-          </div>
-          <div class="text-left">
+            <div class="text-left">
+                <label class="block text-sm font-semibold text-slate-200 mb-2">Fila (1-5)</label>
+                <input id="wrow" type="number" min="1" max="5" 
+                class="w-full p-3 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" 
+                value="1">
+            </div>
+        <div class="text-left">
             <label class="block text-sm font-semibold text-slate-200 mb-2">Columna (1-5)</label>
             <input id="wcol" type="number" min="1" max="5" 
-              class="w-full p-3 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" 
-              value="1">
-          </div>
-        </div>
-      `,
+                class="w-full p-3 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" 
+                value="1">
+            </div>
+        </div>`,
             background: "linear-gradient(135deg, #1e293b 0%, #0f172a 100%)",
             color: "#f1f5f9",
             focusConfirm: false,
@@ -174,7 +172,7 @@ export default function Game() {
                 if (robot && robot.row === row && robot.col === col) {
                     Swal.fire({
                         toast: true,
-                        position: 'top-end',
+                        position: "top-end",
                         icon: "error",
                         title: "No puedes colocar pared donde está el robot",
                         showConfirmButton: false,
@@ -185,10 +183,10 @@ export default function Game() {
                     });
                     return;
                 }
-                if (walls.some(w => w.row === row && w.col === col)) {
+                if (walls.some((w) => w.row === row && w.col === col)) {
                     Swal.fire({
                         toast: true,
-                        position: 'top-end',
+                        position: "top-end",
                         icon: "error",
                         title: "Ya hay una pared ahí",
                         showConfirmButton: false,
@@ -202,7 +200,7 @@ export default function Game() {
                 setWalls([...walls, { row, col }]);
                 Swal.fire({
                     toast: true,
-                    position: 'top-end',
+                    position: "top-end",
                     icon: "success",
                     title: `Pared en ${row},${col}`,
                     showConfirmButton: false,
@@ -214,7 +212,7 @@ export default function Game() {
             } else {
                 Swal.fire({
                     toast: true,
-                    position: 'top-end',
+                    position: "top-end",
                     icon: "error",
                     title: "Posición inválida",
                     showConfirmButton: false,
@@ -244,21 +242,30 @@ export default function Game() {
         }
 
         let { row: mr, col: mc, facing: mf } = robot;
-        let newRow = mr, newCol = mc;
+        let newRow = mr,
+            newCol = mc;
 
         switch (mf) {
-            case "NORTH": newRow = mr === 5 ? 1 : mr + 1; break;
-            case "SOUTH": newRow = mr === 1 ? 5 : mr - 1; break;
-            case "EAST": newCol = mc === 5 ? 1 : mc + 1; break;
-            case "WEST": newCol = mc === 1 ? 5 : mc - 1; break;
+            case "NORTH":
+                newRow = mr === 5 ? 1 : mr + 1;
+                break;
+            case "SOUTH":
+                newRow = mr === 1 ? 5 : mr - 1;
+                break;
+            case "EAST":
+                newCol = mc === 5 ? 1 : mc + 1;
+                break;
+            case "WEST":
+                newCol = mc === 1 ? 5 : mc - 1;
+                break;
         }
 
-        if (walls.some(w => w.row === newRow && w.col === newCol)) {
+        if (walls.some((w) => w.row === newRow && w.col === newCol)) {
             Swal.fire({
                 toast: true,
-                position: 'top-end',
+                position: "top-end",
                 icon: "warning",
-                title: "Pared detectada",
+                title: "Pared detectada. El robot no puede pasar.",
                 showConfirmButton: false,
                 timer: 2000,
                 timerProgressBar: true,
@@ -267,17 +274,6 @@ export default function Game() {
             });
         } else {
             setRobot({ row: newRow, col: newCol, facing: mf });
-            Swal.fire({
-                toast: true,
-                position: 'top-end',
-                icon: "success",
-                title: `Movido a ${newRow},${newCol}`,
-                showConfirmButton: false,
-                timer: 1500,
-                timerProgressBar: true,
-                background: "linear-gradient(135deg, #1e293b 0%, #0f172a 100%)",
-                color: "#f1f5f9"
-            });
         }
     };
 
@@ -303,9 +299,9 @@ export default function Game() {
 
         Swal.fire({
             toast: true,
-            position: 'top-end',
+            position: "top-end",
             icon: "success",
-            title: `Girando ${newFacing}`,
+            title: `Dirección: ${newFacing}`,
             showConfirmButton: false,
             timer: 1500,
             timerProgressBar: true,
@@ -318,17 +314,6 @@ export default function Game() {
         if (robot) {
             const reportText = `${robot.row},${robot.col},${robot.facing}`;
             setReport(reportText);
-            Swal.fire({
-                icon: "info",
-                title: "Reporte del Robot",
-                html: `<div class="text-2xl font-mono font-bold text-blue-400 mt-4">${reportText}</div>`,
-                background: "linear-gradient(135deg, #1e293b 0%, #0f172a 100%)",
-                color: "#f1f5f9",
-                confirmButtonColor: "#3b82f6",
-                customClass: {
-                    popup: "!w-[90vw] !max-w-[400px] sm:!max-w-md rounded-3xl shadow-2xl border border-slate-700/50"
-                }
-            });
         } else {
             Swal.fire({
                 icon: "error",
@@ -400,7 +385,7 @@ export default function Game() {
                 <div className="flex items-center justify-between flex-wrap gap-4 w-full">
                     <Link
                         to="/"
-                        className="inline-flex items-center gap-2 text-slate-300 hover:text-white font-semibold transition-all duration-300 hover:translate-x-1 group text-sm"
+                        className="inline-flex items-center gap-2 text-slate-300 hover:text-white font-semibold transition-all duración-300 hover:translate-x-1 group text-sm"
                     >
                         <svg className="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -476,7 +461,7 @@ export default function Game() {
                                         onClick={placeWall}
                                         className="group relative overflow-hidden rounded-xl p-3 sm:p-4 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 font-bold text-sm text-slate-200 hover:text-white"
                                     >
-                                        <span className="absolute inset-0 bg-gradient-to-r from-gray-400/20 to-slate-400/20 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                                        <span className="absolute inset-0 bg-gradient-to-r from-gray-400/20 to-slate-400/20 -translate-x-full group-hover:translate-x-full transition-transform duración-700" />
                                         <span className="relative">Colocar Pared</span>
                                     </button>
 
@@ -535,7 +520,7 @@ export default function Game() {
                                 <p className="flex justify-between p-3 bg-slate-800/30 rounded-lg">
                                     <span className="text-slate-400">Robot:</span>
                                     <span className="font-mono text-blue-400 font-bold px-3 py-1 bg-blue-500/20 rounded-full">
-                                        {robot ? `${robot.row},${robot.col},${robot.facing}` : 'Sin colocar'}
+                                        {robot ? `${robot.row},${robot.col},${robot.facing}` : "Sin colocar"}
                                     </span>
                                 </p>
                             </div>

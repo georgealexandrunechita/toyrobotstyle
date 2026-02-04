@@ -84,7 +84,7 @@ export default function Home() {
                             min="0"
                             max="100"
                             value={volume}
-                            onChange={(e) => setVolume(parseInt(e.target.value))}
+                            onChange={(e) =>  (parseInt(e.target.value))}
                             className="flex-1 h-2 bg-slate-700/50 rounded-lg appearance-none cursor-pointer"
                             style={{
                                 background: `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${volume}%, rgba(71, 85, 105, 0.5) ${volume}%, rgba(71, 85, 105, 0.5) 100%)`
@@ -108,7 +108,7 @@ export default function Home() {
                                 loading="eager"
                             />
                             <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent mb-2">
-                                Juego del Robot
+                                Emilio el robot
                             </h1>
                         </div>
 
