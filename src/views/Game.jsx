@@ -173,55 +173,55 @@ export default function Game() {
             if (row >= 1 && row <= 5 && col >= 1 && col <= 5) {
                 if (robot && robot.row === row && robot.col === col) {
                     Swal.fire({
+                        toast: true,
+                        position: 'top-end',
                         icon: "error",
-                        title: "Error",
-                        text: "No puedes colocar pared donde está el robot",
+                        title: "No puedes colocar pared donde está el robot",
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
                         background: "linear-gradient(135deg, #1e293b 0%, #0f172a 100%)",
-                        color: "#f1f5f9",
-                        confirmButtonColor: "#ef4444",
-                        customClass: {
-                            popup: "!w-[90vw] !max-w-[400px] sm:!max-w-md rounded-3xl shadow-2xl border border-slate-700/50"
-                        }
+                        color: "#f1f5f9"
                     });
                     return;
                 }
                 if (walls.some(w => w.row === row && w.col === col)) {
                     Swal.fire({
+                        toast: true,
+                        position: 'top-end',
                         icon: "error",
-                        title: "Error",
-                        text: "Ya hay una pared ahí",
+                        title: "Ya hay una pared ahí",
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
                         background: "linear-gradient(135deg, #1e293b 0%, #0f172a 100%)",
-                        color: "#f1f5f9",
-                        confirmButtonColor: "#ef4444",
-                        customClass: {
-                            popup: "!w-[90vw] !max-w-[400px] sm:!max-w-md rounded-3xl shadow-2xl border border-slate-700/50"
-                        }
+                        color: "#f1f5f9"
                     });
                     return;
                 }
                 setWalls([...walls, { row, col }]);
                 Swal.fire({
+                    toast: true,
+                    position: 'top-end',
                     icon: "success",
-                    title: "Pared colocada",
-                    text: `Posición: ${row},${col}`,
+                    title: `Pared en ${row},${col}`,
+                    showConfirmButton: false,
+                    timer: 1500,
+                    timerProgressBar: true,
                     background: "linear-gradient(135deg, #1e293b 0%, #0f172a 100%)",
-                    color: "#f1f5f9",
-                    confirmButtonColor: "#10b981",
-                    customClass: {
-                        popup: "!w-[90vw] !max-w-[400px] sm:!max-w-md rounded-3xl shadow-2xl border border-slate-700/50"
-                    }
+                    color: "#f1f5f9"
                 });
             } else {
                 Swal.fire({
+                    toast: true,
+                    position: 'top-end',
                     icon: "error",
-                    title: "Error",
-                    text: "Posición inválida",
+                    title: "Posición inválida",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
                     background: "linear-gradient(135deg, #1e293b 0%, #0f172a 100%)",
-                    color: "#f1f5f9",
-                    confirmButtonColor: "#ef4444",
-                    customClass: {
-                        popup: "!w-[90vw] !max-w-[400px] sm:!max-w-md rounded-3xl shadow-2xl border border-slate-700/50"
-                    }
+                    color: "#f1f5f9"
                 });
             }
         }
@@ -255,29 +255,28 @@ export default function Game() {
 
         if (walls.some(w => w.row === newRow && w.col === newCol)) {
             Swal.fire({
+                toast: true,
+                position: 'top-end',
                 icon: "warning",
                 title: "Pared detectada",
-                text: "El robot no puede pasar",
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true,
                 background: "linear-gradient(135deg, #1e293b 0%, #0f172a 100%)",
-                color: "#f1f5f9",
-                confirmButtonColor: "#f59e0b",
-                customClass: {
-                    popup: "!w-[90vw] !max-w-[400px] sm:!max-w-md rounded-3xl shadow-2xl border border-slate-700/50"
-                }
+                color: "#f1f5f9"
             });
         } else {
             setRobot({ row: newRow, col: newCol, facing: mf });
             Swal.fire({
+                toast: true,
+                position: 'top-end',
                 icon: "success",
-                title: "Robot movido",
-                text: `Nueva posición: ${newRow},${newCol},${mf}`,
-                timer: 1500,
+                title: `Movido a ${newRow},${newCol}`,
                 showConfirmButton: false,
+                timer: 1500,
+                timerProgressBar: true,
                 background: "linear-gradient(135deg, #1e293b 0%, #0f172a 100%)",
-                color: "#f1f5f9",
-                customClass: {
-                    popup: "!w-[90vw] !max-w-[400px] sm:!max-w-md rounded-3xl shadow-2xl border border-slate-700/50"
-                }
+                color: "#f1f5f9"
             });
         }
     };
@@ -301,17 +300,17 @@ export default function Game() {
         const offset = direction === "LEFT" ? 3 : 1;
         const newFacing = DIRECTIONS[(DIRECTIONS.indexOf(robot.facing) + offset) % 4];
         setRobot({ ...robot, facing: newFacing });
+
         Swal.fire({
+            toast: true,
+            position: 'top-end',
             icon: "success",
-            title: "Robot girado",
-            text: `Nueva dirección: ${newFacing}`,
-            timer: 1500,
+            title: `Girando ${newFacing}`,
             showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
             background: "linear-gradient(135deg, #1e293b 0%, #0f172a 100%)",
-            color: "#f1f5f9",
-            customClass: {
-                popup: "!w-[90vw] !max-w-[400px] sm:!max-w-md rounded-3xl shadow-2xl border border-slate-700/50"
-            }
+            color: "#f1f5f9"
         });
     };
 
