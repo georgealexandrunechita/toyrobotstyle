@@ -145,7 +145,7 @@ export default function Home() {
                 </div>
 
                 <p className="mt-10 text-sm text-slate-400 font-medium tracking-wide">
-                    Desarrollado por Alex Nechita
+                    2026 Desarrollado por Alex Nechita
                 </p>
             </div>
         </div>
